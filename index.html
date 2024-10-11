@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Günlük Karbon Ayak İzi Hesaplayıcı</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js kütüphanesi -->
+</head>
+<body>
+    <h1>Günlük Karbon Ayak İzi Hesaplayıcı</h1>
+    
+    <!-- Karbon Ayak İzi İle İlgili Resim -->
+    <img src="images/carbon_footprint.jpg" alt="Karbon Ayak İzi" width="400">
+    
+    <form id="carbonForm">
+        <label for="transport">Ulaşım Seçimi:</label>
+        <select id="transport" name="transport">
+            <option value="car">Araba</option>
+            <option value="public_transport">Toplu Taşıma</option>
+            <option value="motorcycle">Motosiklet</option>
+            <option value="bike">Bisiklet/Yürüyüş</option>
+        </select>
+        <br><br>
+
+        <label for="energy">Bilgisayar Kullanım Süresi (Saat):</label>
+        <input type="number" id="energy" name="energy" min="0" max="24" value="0">
+        <br><br>
+
+        <label for="mobile">Cep Telefonu Kullanım Süresi (Saat):</label>
+        <input type="number" id="mobile" name="mobile" min="0" max="24" value="0">
+        <br><br>
+
+        <label for="paper">Kağıt Kullanımı (Adet):</label>
+        <input type="number" id="paper" name="paper" min="0" value="0">
+        <br><br>
+
+        <button type="button" onclick="calculateCarbonFootprint()">Karbon Ayak İzini Hesapla</button>
+    </form>
+
+    <h2 id="result">Sonuç: </h2>
+
+    <!-- Grafik alanı -->
+    <h2>Karbon Ayak İzinin Dünyaya Etkisi</h2>
+    <canvas id="carbonChart" width="400" height="200"></canvas> <!-- Grafik için canvas alanı -->
+    
+    <script src="app.js"></script> <!-- JavaScript dosyası -->
+</body>
+</html>
